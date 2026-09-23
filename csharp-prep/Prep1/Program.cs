@@ -12,4 +12,5 @@ class Program
 
         Console.Write("Please enter your last name:");
         lastName = Console.ReadLine();
+    }
 }
