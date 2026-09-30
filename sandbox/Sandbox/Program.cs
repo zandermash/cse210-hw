@@ -1,11 +1,11 @@
-using System;
+// using System;
 
-static double AddNumbers(double x, int y)
-{
-    return x+y;
-}
+// static double AddNumbers(double x, int y)
+// {
+//     return x+y;
+// }
 
-// class Program
+// // class Program
 // {
 //     static void Main(string[] args)
 //     {
@@ -69,4 +69,41 @@ static double AddNumbers(double x, int y)
 //     Console.WriteLine(name);
 // }
 
-Console.WriteLine(AddNumbers(12, 10));
+// Console.WriteLine(AddNumbers(12, 10));
+
+//bool done = false;
+//int x = 0;
+
+// while (!done)
+// {
+//     x += 1;
+//     if (x >= 1500)
+//     {
+//         done = true;
+//     }
+//     Console.WriteLine(x);
+// }
+
+class Program
+{
+    
+    static double AddNumbers(double x, int y)
+    {
+        return x + y;
+    }
+
+    static void DisplayGreeting(string name)
+    {
+        Console.WriteLine($"Welcome {name}, pleased to meet you.");
+    }
+
+    static void Main(string[] args)
+    {
+        DisplayGreeting("Bob");
+        double answer = AddNumbers(12.234, 10);
+        Console.WriteLine(answer);
+    }
+
+
+}
+
