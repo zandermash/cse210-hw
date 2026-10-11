@@ -1,3 +1,5 @@
+using System.Formats.Asn1;
+using System.Linq.Expressions;
 using System.Net;
 
 class Menu
@@ -5,11 +7,11 @@ class Menu
     public int ProcessMenu()
     {
         int response = 0;
-
+        Console.WriteLine("Welcome to the Journaling Program!");
+        JournalEntry entry = new JournalEntry ();
         while (response != 5)
         {
-            Console.WriteLine("Welcome to the Journaling Program!");
-            Console.WriteLine("Create, Display, Save, and Read Journal Entries");
+            Console.WriteLine("Please select one of the following:");
             Console.WriteLine("1. Create new Journal entry");
             Console.WriteLine("2. Display Journal");
             Console.WriteLine("3. Save journal file");
@@ -20,8 +22,21 @@ class Menu
 
             if (response == 1)
             {
+                entry.CreateJournalEntry();
+            }
+            
+            else if (response == 2) 
+            {
+                entry.DisplayEntry();
+            }
+
+            else if (response == 3)
+            {
                 
             }
+
+
+
         }
 
         return 1;

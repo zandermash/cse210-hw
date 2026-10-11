@@ -3,21 +3,36 @@ class JournalEntry
     public string _date;
     public string _prompt;
     public string _response;
+    public List<string> JournalEntries = new List<string> {};
+
 
     public void DisplayEntry()
     {
-        Console.WriteLine($"{_date}, ");
-        Console.WriteLine($"{_prompt}, ");
-        Console.WriteLine($"{_response}, ");
+
+
+        foreach (string finished in JournalEntries)
+        {
+            Console.WriteLine(finished);
+        }
+        ;
     }
 
-    public void CreateJournalEntry()
+    public string CreateJournalEntry()
     {
-        _date = "October 7, 2026"; // need to get datetime
-        _prompt = "How was your day? "; // need to make promp generator class
+        DateTime theCurrentTime = DateTime.Now;
+        _date = theCurrentTime.ToShortDateString();
 
-        Console.Write($"{_prompt}");
+        PromptGenerator prompts = new PromptGenerator ();
+        _prompt = prompts.Prompts();
+
+        Console.WriteLine(_prompt);
+        Console.Write("> ");
         _response = Console.ReadLine();
+
+        string entry = $"{_date} \n{_prompt}\n{_response}\n";
+        JournalEntries.Add(entry);
+        
+        return "";
     }
 }
 
