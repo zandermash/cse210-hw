@@ -4,14 +4,12 @@ using System.Formats.Asn1;
 
 class Program
 {
-    // To excede the requirements, I added a new class called Scripture Library with a few
-    // options of preloaded scriptures for the user to choose from, or the option to use their own scripture
-    // and the option to add that scripture to the list of preloaded scriptures so they can use that later.
+    // To excede the requirements, I let the user input their own scripture.
 
     static void Main(string[] args)
     {
-        Scripture myScripture = new Scripture("Moses", 1, 39, 
-            "Behold, this is my work and my glory to bring to pass the immortality and eternal life of man");
+        ScriptureBuilder build = new ScriptureBuilder();
+        Scripture myScripture = build.GetCustomScripture();
         bool done = false;
         while (!done)
         {
